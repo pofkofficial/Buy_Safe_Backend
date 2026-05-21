@@ -49,6 +49,13 @@ app.use('/api', routes);
 // ─── Health Check ─────────────────────────────────────────────────────────────
 app.get('/health', (_req, res) => res.json({ status: 'ok', ts: Date.now() }));
 
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'API is running',
+  });
+});
+
 // ─── 404 Handler ──────────────────────────────────────────────────────────────
 app.use((_req, res) => {
   res.status(404).json({ success: false, message: 'Route not found.' });
