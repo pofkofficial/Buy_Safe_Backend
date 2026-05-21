@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const helmet   = require('helmet');
 const rateLimit = require('express-rate-limit');
 
+require('dotenv').config();
 const routes = require('./routes/index');
 
 const app = express();
